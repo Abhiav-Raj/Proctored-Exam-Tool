@@ -11,9 +11,6 @@ To create an exam, just register and log in to your account, click on the Create
 **Deep Learning Model-** Tensorflow Implementation of CocoSSD Object Detection Model
 
 
-# Hosted Application URL
-https://online-exam-proctoring.herokuapp.com/
-
 # About The Author
 Hello! I am Rohit Tuli, **Final Year BTech CSE student at IIT Ropar**. I am very passionate about software development and problem-solving. Previously I have interned at **Flipkart** and **National University of Singapore**. Currently, I am working on a **year-long Research Project in collaboration with Microsoft India.** 
 I was also a **National Finalist (Top 3) in Flipkart Grid Challenge 2.0**, and **2nd Position in Global Cyber Challenge**, an international hackathon conducted by Government of India. 
