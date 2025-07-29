@@ -1,6 +1,6 @@
-# Procto- An Automatic Exam Proctoring tool for Online Exams
+# Proctor Exam Tool- An Automatic Exam Proctoring tool for Online Exams
 
-# About Procto
+# About Proctor Exam Tool
 **Procto** is an online proctoring tool that Professors can use to create exams that are Proctored using AI. They can also view the status of each student taking the exam in Real-Time. **It is fast, easy to use, and incredibly convenient with a minimalistic UI!**
 To create an exam, just register and log in to your account, click on the Create Exam button and enter details like Exam Name, Google Form Link, Start Date and Time and duration. Procto generates a unique exam code that you can distribute among the students. The students start the exam by logging in and entering the exam code while the exam is running. While they are taking the exam they are **proctored using an AI-based system**. By entering the exam code, the professor can see the status of all the students in **real-time**.
 
