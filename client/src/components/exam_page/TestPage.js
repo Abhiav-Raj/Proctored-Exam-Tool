@@ -26,11 +26,7 @@ export default function TestPage(props){
   
   const history = useHistory();
 
-  /**
-   * The below 4 functions are helper functions to set state
-   * Are passed to the ObjectDetection component to allow it
-   * to change state of its parent (This component)
-   */
+
   function update_mobile_phone_found(){
     setMobilePhoneFound(true);
   }
@@ -43,10 +39,7 @@ export default function TestPage(props){
   function update_multiple_faces_visible(){
     setMultipleFacesVisible(true);
   }
-  /**
-   * This function sends the current exam logs to the backend 
-   * to update the database. This function is called every second.
-   */
+
   function sendLogsToServer(){
     axios.post('/api/logs/update',{
           exam_code: exam_id,
@@ -68,11 +61,7 @@ export default function TestPage(props){
       })
       
   }
-  /**
-   * This function is called when test page is opened for the first time
-   * It retrieves cheating data from the server if the student had given the exam
-   * before and closed the window in between
-   */
+
   function getPreviousLogs(){
       axios.get('/api/logs/logByEmail?exam_code='+exam_id+'&student_email='+student_email)
       .then(function (response) {
@@ -89,10 +78,7 @@ export default function TestPage(props){
       });
   }
 
-  /**
-   * Function checks for tab change or minimising the window/ opening
-   * another window by checking if the window is in focus or not
-   */
+ 
   function handleVisibilityChange() {
     if (document.hidden) {
         // the page is hidden
@@ -131,7 +117,7 @@ export default function TestPage(props){
 
   useEffect(() => {
     
-    // Initialising all the event handlers when the page loads
+    
     document.addEventListener("visibilitychange", handleVisibilityChange, false);
     document.addEventListener('contextmenu', function (e) {
         e.preventDefault();
@@ -143,7 +129,7 @@ export default function TestPage(props){
       setCheckedPrevLogs(true);
   }
 
-    // Removing all event handlers when the page exits
+ 
     return function cleanup() {
       document.removeEventListener("visibilitychange", handleVisibilityChange);
       document.removeEventListener('contextmenu', function (e) {
@@ -153,10 +139,7 @@ export default function TestPage(props){
     }
   })
 
-  /**
-   * This useEffect function runs every second. It is used to update
-   * the minutes and seconds counter and send cheating data to server
-   */
+
   useEffect(() => {
     let myInterval = setInterval(() => {
       if (seconds > 0) {
@@ -183,11 +166,7 @@ export default function TestPage(props){
 
   });
   
-  /**
-   * This function is called when the student presses exit exam button
-   * since data is shared with the backend every second we just redirect to 
-   * the dashboard after showing a confirmation message
-   */
+  
   function handleSubmit(){
       swal("Thank You for taking the exam. Logs have been shared with your professor");
       history.push('/dashboard');

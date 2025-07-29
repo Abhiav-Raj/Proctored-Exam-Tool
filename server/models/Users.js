@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 // create new schema for website user (professor or student)
-// userType is true if professor else false
+
 const UserSchema = new Schema({
     name: {
       type: String,
@@ -21,5 +21,5 @@ const UserSchema = new Schema({
     }
     
   });
-// export the model
+
 module.exports = User = mongoose.model("users", UserSchema);

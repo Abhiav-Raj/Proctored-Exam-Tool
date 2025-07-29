@@ -20,8 +20,8 @@ import Tooltip from '@mui/material/Tooltip';
 import DeleteIcon from '@mui/icons-material/Delete';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import SearchBar from "material-ui-search-bar";
-
-const axios = require('axios')
+import axios from 'axios';
+//const axios = require('axios')
 
 /**
  * Comparator function for descending sort

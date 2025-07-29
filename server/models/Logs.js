@@ -48,5 +48,4 @@ const LogsSchema = new Schema({
     }
     
   });
-// export the model
 module.exports = User = mongoose.model("logs", LogsSchema);

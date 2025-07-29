@@ -7,13 +7,15 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import DateTimePicker from '@mui/lab/DateTimePicker';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { DateTimePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import swal from 'sweetalert';
 import { logoutUser } from "../../actions/authActions";
 import LogsTable from "./LogsTable.js"
 import { connect } from "react-redux";
+import axios from 'axios';
+
+
 
 function ProfDashboard(props) {
   const [examDialogOpen, setExamDialogOpen] = useState(false);
@@ -24,22 +26,14 @@ function ProfDashboard(props) {
   const [exam_code, setExamCode] = useState("");
   const [errorText, setErrorText] = useState("");
   const [exam_code_search, setExamCodeSearch] = useState("");
-  const axios = require("axios");
+  // const axios = require("axios");
 
-  /**
-   * This function opens the exam dialog
-   * Triggered when user presses Create Exam button
-   */
+
   function openExamDialog(){
       setExamDialogOpen(true);
   }
 
-  /**
-   * This function is called when user presses Cancel Button
-   * or clicks outside the dialog box
-   * It first sets all variables to their initial value then
-   * closes the dialog box
-   */
+ 
   function closeExamDialog(){
       setName("");
       setExamLink("");
@@ -60,13 +54,7 @@ function ProfDashboard(props) {
       return regexp.test(s);
   }
   
-  /**
-   * This function is called when Create Exam button is pressed
-   * It first checks whether all fields are correct, if not it displays error
-   * Then it sends data to server, closes the dialog and shows a notification
-   * that exam has been created
-   * 
-   */
+
   function createExam(){
       if(name===""){
           setErrorText("Name of Exam cannot be empty");
@@ -88,11 +76,11 @@ function ProfDashboard(props) {
           setErrorText("Click Generate exam code to get an exam code first");
           return;
       }
-      var current_date_time = new Date();
-      if(date_time_start< current_date_time){
-        setErrorText("Please select a date and time of the future");
-        return;
-      }
+      // var current_date_time = new Date();
+      // if(date_time_start< current_date_time){
+      //   setErrorText("Please select a date and time of the future");
+      //   return;
+      // }
       axios.post('/api/exams/createExam', {
           name: name,
           exam_link: exam_link,
@@ -114,9 +102,7 @@ function ProfDashboard(props) {
       
   }
 
-  /**
-   * Generates a random code of length 5 to be used as exam code
-   */
+  
   function generateCode(){
       var result = '';
       var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -203,7 +189,7 @@ function ProfDashboard(props) {
                   required={true}
                   fullWidth
               />
-              <LocalizationProvider dateAdapter={AdapterDateFns}>
+              {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <DateTimePicker
                       renderInput={(props) => <TextField {...props} />}
                       label="DateTimePicker"
@@ -214,7 +200,7 @@ function ProfDashboard(props) {
                       setDateTimeStart(newValue);
                       }}
                   />
-              </LocalizationProvider>
+                    </LocalizationProvider> */}
               <TextField
                   id="duration"
                   name="duration"

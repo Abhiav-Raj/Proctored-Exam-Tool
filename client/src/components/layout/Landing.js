@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-/**
- * Creates the landing page that has 2 buttons Register and Login
- * Button presses redirect to the correct component
- */
+
 class Landing extends Component {
 
   render() {

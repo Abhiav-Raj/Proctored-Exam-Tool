@@ -1,10 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-/**
- * Creates the navbar that sticks to the top and is present on
- * all pages
- */
+
 export default function Navbar() {
   return (
     <div className="navbar-fixed" >

@@ -29,5 +29,5 @@ const ExamSchema = new Schema({
     }
     
   });
-// export the model
+
 module.exports = User = mongoose.model("exams", ExamSchema);
