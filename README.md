@@ -10,8 +10,6 @@ To create an exam, just register and log in to your account, click on the Create
 **Database-** MongoDB Atlas, Mongoose
 **Deep Learning Model-** Tensorflow Implementation of CocoSSD Object Detection Model
 
-# Video Demo
-[![Video Link](https://i9.ytimg.com/vi/8b6_rfUunG4/mq2.jpg?sqp=CJiYjY0G&rs=AOn4CLB0Y_JLes_6GY3X1obVKle_GKbfww)](https://www.youtube.com/watch?v=8b6_rfUunG4&ab)
 
 # Hosted Application URL
 https://online-exam-proctoring.herokuapp.com/
@@ -23,8 +21,7 @@ I love problem-solving and actively participate in many Competitive Programming 
 
 # How to Use?
 
-## Note
-**The website is hosted on [This Link](https://online-exam-proctoring.herokuapp.com/).**
+
 **I recommend running on this URL instead of running on your machine**
 
 If you wish to run it on your machine, 
